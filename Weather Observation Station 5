@@ -1,0 +1,19 @@
+/*SELECT
+	name,
+	CHARACTER_LENGTH(name) as len_name
+FROM
+	customers
+WHERE CHARACTER_LENGTH(name) = (
+	SELECT MIN(CHARACTER_LENGTH(name)) FROM customers
+	) OR CHARACTER_LENGTH(name) = (
+	SELECT MAX(CHARACTER_LENGTH(name)) FROM customers
+	)
+GROUP BY len_name
+ORDER BY
+ name ASC*/
+
+( SELECT CITY, length( CITY ) FROM STATION ORDER BY length( CITY ) DESC, CITY ASC LIMIT 1 ) 
+
+UNION
+
+( SELECT CITY, length( CITY ) FROM STATION ORDER BY length( CITY ) ASC, CITY ASC LIMIT 1 );
