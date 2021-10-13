@@ -1,7 +1,4 @@
-/*The query below looks like returning the correct answer but the compiler says it is wrong.
-Could you help me find out why?*/
-
-SELECT CONCAT(Name," (",LEFT(Occupation,1),")")
+SELECT CONCAT(Name,"(",LEFT(Occupation,1),")")
 FROM OCCUPATIONS
 ORDER BY Name ASC;
 
